@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--LoadingViewController-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="LoadingViewController" id="BYZ-38-t0r" customClass="LoadingViewController" customModule="InfiniteScroll" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vkd-pP-H2C">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="InfinteCell" rowHeight="100" id="K38-UQ-FPL" customClass="InfinteCell" customModule="InfiniteScroll" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K38-UQ-FPL" id="70Y-HL-aAT">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZAb-Vw-1w5">
+                                                    <rect key="frame" x="138" y="0.0" width="138" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="138" id="Mwk-Pa-7fK"/>
+                                                        <constraint firstAttribute="height" constant="100" id="Ntx-d0-c13"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ZAb-Vw-1w5" firstAttribute="top" secondItem="70Y-HL-aAT" secondAttribute="top" id="5W3-22-Rb6"/>
+                                                <constraint firstItem="ZAb-Vw-1w5" firstAttribute="centerX" secondItem="70Y-HL-aAT" secondAttribute="centerX" id="ucD-Wa-d8F"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cellAlbumImage" destination="ZAb-Vw-1w5" id="VG4-IO-wim"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Ouk-Oh-VNN"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Tw2-Dh-CvC"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vkd-pP-H2C" secondAttribute="bottom" id="2N6-Ln-pvB"/>
+                            <constraint firstItem="vkd-pP-H2C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BFw-HV-FFL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vkd-pP-H2C" secondAttribute="trailing" id="Iz7-Ew-Bhr"/>
+                            <constraint firstItem="vkd-pP-H2C" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xq3-Fw-Xiz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="infiniteTable" destination="vkd-pP-H2C" id="jE2-2E-eed"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="119.86607142857142"/>
+        </scene>
+    </scenes>
+</document>
